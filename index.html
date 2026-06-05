@@ -1,150 +1,135 @@
-<a href="https://example.com/file.deb" target="_blank">
-    <button style="padding:10px 20px;font-size:16px;"uuyyyyyyuvhnnnnnmhvhyur
-    </button>
-</a><a href=xnxx">
-    <button>Bấm vào đây</button>
-</a><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NVH Store</title>
+<title>Little Repo</title>
 
 <style>
 body{
-    background:#111;
-    color:white;
     font-family:Arial,sans-serif;
     margin:0;
+    background:#121212;
+    color:white;
+    transition:0.3s;
 }
 
 header{
     text-align:center;
     padding:30px;
-    background:#1a1a1a;
 }
 
 .logo{
-    width:100px;
+    width:120px;
     border-radius:20px;
 }
 
-.card{
-    background:#1f1f1f;
-    margin:15px;
+.status{
+    color:red;
+    font-weight:bold;
+}
+
+.toggle{
+    position:fixed;
+    top:15px;
+    right:15px;
+    padding:10px;
+    cursor:pointer;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.app{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#1e1e1e;
     padding:15px;
+    margin:15px 0;
+    border-radius:12px;
+}
+
+.app img{
+    width:70px;
+    height:70px;
     border-radius:15px;
 }
 
-.btn{
-    display:inline-block;
-    background:#007aff;
+.download{
+    margin-left:auto;
+    background:#ff3b30;
     color:white;
+    padding:10px 15px;
     text-decoration:none;
-    padding:10px 20px;
     border-radius:10px;
+}
+
+.light{
+    background:white;
+    color:black;
+}
+
+.light .app{
+    background:#f0f0f0;
 }
 </style>
 </head>
-
 <body>
+
+<button class="toggle" onclick="toggleMode()">🌙</button>
 
 <header>
     <img src="logo.png" class="logo">
-    <h1>NVH Store</h1>
-    <p>Kho ứng dụng & game</p>
+    <h1>Little Repo</h1>
+
+    <p>
+        Kho IPA dành cho người dùng jailbreak và sideload.
+        Cập nhật ứng dụng thường xuyên với tốc độ tải nhanh.
+    </p>
+
+    <p class="status">🔴 Trạng thái: Đang hoạt động</p>
 </header>
 
-<div class="card">
-    <h2>Liên Quân Mobile</h2>
-    <p>Phiên bản mới nhất.</p>
-    <a class="btn" href="https://example.com">Tải xuống</a>
+<div class="container">
+
+    <div class="app">
+        <img src="uyou.png">
+        <div>
+            <h3>uYou+</h3>
+            <p>YouTube nâng cao.</p>
+        </div>
+        <a href="#" class="download">Tải IPA</a>
+    </div>
+
+    <div class="app">
+        <img src="tiktok.png">
+        <div>
+            <h3>TikTok Plus</h3>
+            <p>TikTok không quảng cáo.</p>
+        </div>
+        <a href="#" class="download">Tải IPA</a>
+    </div>
+
+    <div class="app">
+        <img src="spotify.png">
+        <div>
+            <h3>Spotify++</h3>
+            <p>Phiên bản tùy chỉnh.</p>
+        </div>
+        <a href="#" class="download">Tải IPA</a>
+    </div>
+
 </div>
 
-<div class="card">
-    <h2>Minecraft</h2>
-    <p>Game sinh tồn nổi tiếng.</p>
-    <a class="btn" href="https://example.com">Tải xuống</a>
-</div>
-
-<div class="card">
-    <h2>Spotify Premium</h2>
-    <p>Nghe nhạc không quảng cáo.</p>
-    <a class="btn" href="https://example.com">Tải xuống</a>
-</div>
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+</script>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NVH Store</title>
-
-<style>
-body{
-margin:0;
-background:#0f0f0f;
-font-family:Arial;
-color:white;
-}
-.banner{
-padding:40px;
-text-align:center;
-background:#1c1c1c;
-}
-.app{
-background:#222;
-margin:15px;
-padding:15px;
-border-radius:15px;
-}
-.app img{
-width:80px;
-border-radius:20px;
-}
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-background:#007aff;
-color:white;
-text-decoration:none;
-border-radius:10px;
-}
-</style>
-</head>
-<body>
-
-<div class="banner">
-<h1>NVH STORE</h1>
-<p>Kho ứng dụng & game</p>
-</div>
-
-<div class="app">
-<img src="logo1.png">
-<h2>Liên Quân Mobile</h2>
-<p>Phiên bản mới nhất</p>
-<a class="btn" href="LINK_TAI">Tải xuống</a>
-</div>
-
-<div class="app">
-<img src="logo2.png">
-<h2>Minecraft</h2>
-<p>Game sinh tồn</p>
-<a class="btn" href="LINK_TAI">Tải xuống</a>
-</div>
-
-</body>
-</html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NVH Store</title>
-
-<meta name="description" content="NVH Store - Kho ứng dụng, game và công cụ dành cho iOS, Android. Cập nhật thường xuyên với giao diện đơn giản và dễ sử dụng.">
-
-</head><meta name="keywords" content="NVH Store, game, ứng dụng, iOS, Android">
-<meta name="author" content="NVH">

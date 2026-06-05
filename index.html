@@ -3,142 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Repo</title>
+
+<title>NVH REPO</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
 body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    background:#121212;
-    color:white;
-    transition:0.3s;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+background:
+radial-gradient(circle at top,#4c148a,#130021 60%,#090011);
+color:white;
+overflow-x:hidden;
 }
 
-header{
-    text-align:center;
-    padding:30px;
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#5f00ff;
+filter:blur(180px);
+opacity:.3;
+top:-100px;
+left:-100px;
+animation:move1 10s infinite alternate;
 }
 
-.logo{
-    width:120px;
-    border-radius:20px;
+body::after{
+content:"";
+position:fixed;
+width:400px;
+height:400px;
+background:#00d4ff;
+filter:blur(180px);
+opacity:.2;
+bottom:-100px;
+right:-100px;
+animation:move2 12s infinite alternate;
 }
 
-.status{
-    color:red;
-    font-weight:bold;
+@keyframes move1{
+to{
+transform:translate(100px,100px);
+}
 }
 
-.toggle{
-    position:fixed;
-    top:15px;
-    right:15px;
-    padding:10px;
-    cursor:pointer;
+@keyframes move2{
+to{
+transform:translate(-100px,-80px);
+}
 }
 
 .container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+width:100%;
+max-width:520px;
+position:relative;
+z-index:2;
+text-align:center;
 }
 
-.app{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    background:#1e1e1e;
-    padding:15px;
-    margin:15px 0;
-    border-radius:12px;
+.logo{
+width:170px;
+height:170px;
+border-radius:50%;
+border:4px solid #38dfff;
+box-shadow:
+0 0 20px #38dfff,
+0 0 50px #38dfff;
+animation:pulse 2s infinite;
+object-fit:cover;
+background:white;
 }
 
-.app img{
-    width:70px;
-    height:70px;
-    border-radius:15px;
+@keyframes pulse{
+50%{
+box-shadow:
+0 0 30px #38dfff,
+0 0 80px #38dfff;
+}
 }
 
-.download{
-    margin-left:auto;
-    background:#ff3b30;
-    color:white;
-    padding:10px 15px;
-    text-decoration:none;
-    border-radius:10px;
+.title{
+font-size:58px;
+font-weight:800;
+margin-top:25px;
+
+background:linear-gradient(
+90deg,
+#00d4ff,
+#ffffff,
+#d78cff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.light{
-    background:white;
-    color:black;
+.status{
+margin-top:15px;
+font-size:23px;
+color:#ddd;
 }
 
-.light .app{
-    background:#f0f0f0;
+.online{
+display:inline-block;
+width:14px;
+height:14px;
+border-radius:50%;
+background:#00ff55;
+box-shadow:0 0 12px #00ff55;
+margin-right:10px;
 }
+
+.repo-box{
+margin-top:30px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:25px;
+}
+
+.repo-link{
+font-size:20px;
+font-weight:700;
+word-break:break-all;
+}
+
+.copy-btn{
+padding:12px 20px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+
+background:#233f88;
+color:#7ecfff;
+
+font-weight:700;
+}
+
+.copy-btn:hover{
+transform:scale(1.05);
+}
+
+.btn{
+display:block;
+
+margin-top:22px;
+
+padding:28px;
+
+border-radius:25px;
+
+text-decoration:none;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+font-size:30px;
+font-weight:700;
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 0 25px rgba(255,255,255,.15);
+}
+
+.cydia{
+color:#ffb566;
+}
+
+.sileo{
+color:#35ff8d;
+}
+
+.zebra{
+color:#d67cff;
+}
+
+.saily{
+color:#6ca8ff;
+}
+
+.footer{
+margin-top:35px;
+font-size:14px;
+color:#888;
+}
+
 </style>
 </head>
+
 <body>
-
-<button class="toggle" onclick="toggleMode()">🌙</button>
-
-<header>
-    <img src="logo.png" class="logo">
-    <h1>Little Repo</h1>
-
-    <p>
-        Kho IPA dành cho người dùng jailbreak và sideload.
-        Cập nhật ứng dụng thường xuyên với tốc độ tải nhanh.
-    </p>
-
-    <p class="status">🔴 Trạng thái: Đang hoạt động</p>
-</header>
 
 <div class="container">
 
-    <div class="app">
-        <img src="uyou.png">
-        <div>
-            <h3>uYou+</h3>
-            <p>YouTube nâng cao.</p>
-        </div>
-        <a href="#" class="download">Tải IPA</a>
-    </div>
+<img src="logo.png" class="logo">
 
-    <div class="app">
-        <img src="tiktok.png">
-        <div>
-            <h3>TikTok Plus</h3>
-            <p>TikTok không quảng cáo.</p>
-        </div>
-        <a href="#" class="download">Tải IPA</a>
-    </div>
+<div class="title">NVH REPO</div>
 
-    <div class="app">
-        <img src="spotify.png">
-        <div>
-            <h3>Spotify++</h3>
-            <p>Phiên bản tùy chỉnh.</p>
-        </div>
-        <a href="#" class="download">Tải IPA</a>
-    </div>
+<div class="status">
+<span class="online"></span>
+Đang hoạt động - Sẵn sàng phục vụ bạn
+</div>
+
+<div class="repo-box">
+
+<div class="repo-link" id="repo">
+https://nvhrepo.github.io/
+</div>
+
+<button class="copy-btn" onclick="copyRepo()">
+SAO CHÉP
+</button>
+
+</div>
+
+<a class="btn cydia"
+href="cydia://url/https://cydia.saurik.com/api/share#?source=https://nvhrepo.github.io/">
+➕ Thêm vào Cydia
+</a>
+
+<a class="btn sileo"
+href="sileo://source/https://nvhrepo.github.io/">
+⚡ Thêm vào Sileo
+</a>
+
+<a class="btn zebra"
+href="zbra://sources/add/https://nvhrepo.github.io/">
+☰ Thêm vào Zebra
+</a>
+
+<a class="btn saily"
+href="saily://source/https://nvhrepo.github.io/">
+👜 Thêm vào Saily
+</a>
+
+<div class="footer">
+© 2026 NVH Repo
+</div>
 
 </div>
 
 <script>
-function toggleMode(){
-    document.body.classList.toggle("light");
+
+function copyRepo(){
+
+const text =
+"https://nvhrepo.github.io/";
+
+navigator.clipboard.writeText(text);
+
+alert("Đã sao chép repo!");
+
 }
+
 </script>
 
 </body>
 </html>
-<footer>
-    © 2026 Little Repo | Powered by GitHub Pages
-</footer>
-
-<script>
-function toggleMode(){
-    document.body.classList.toggle("light");
-}
-</script>

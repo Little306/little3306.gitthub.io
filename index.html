@@ -1,26 +1,11 @@
 <!DOCTYPE html>
-
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JTISVN REPO</title>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVH REPO</title>
 
 <style>
-.btn,
-.card,
-.support-btn{
-    transition: all 0.2s ease;
-}
-
-.btn:active,
-.card:active,
-.support-btn:active{
-    transform: scale(0.96);
-    opacity: 0.85;
-}
 *{
 margin:0;
 padding:0;
@@ -28,386 +13,405 @@ box-sizing:border-box;
 font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
-html{
-background:#050010;
+body{
+background:linear-gradient(135deg,#00aaff,#00152f,#000814);
+min-height:100vh;
+padding:15px;
+transition:.3s;
 }
 
-body{s
-min-height:100vh;
-background:
-radial-gradient(circle at top,#32104d 0%,#120022 35%,#050010 100%);
-background-attachment:fixed;
-color:white;
-padding:20px;
-overflow-x:hidden;
+body.light{
+background:linear-gradient(135deg,#eef8ff,#cfe7ff);
 }
 
 .container{
-max-width:900px;
+max-width:500px;
 margin:auto;
+padding:20px;
+border-radius:30px;
+background:rgba(3,10,25,.88);
+backdrop-filter:blur(30px);
+-webkit-backdrop-filter:blur(30px);
+border:2px solid rgba(0,220,255,.6);
+box-shadow:
+0 0 25px rgba(0,220,255,.4),
+0 0 60px rgba(0,120,255,.25);
+}
+
+/* LOGO IMAGE */
+.logo-img{
+text-align:center;
+margin-bottom:10px;
+}
+
+.logo-img img{
+width:100%;
+max-width:420px;
+height:auto;
+filter:
+drop-shadow(0 0 10px #00c8ff)
+drop-shadow(0 0 25px #00c8ff)
+drop-shadow(0 0 40px #00c8ff);
 }
 
 .logo{
-width:130px;
-height:130px;
+text-align:center;
+font-size:42px;
+font-weight:900;
+color:#fff;
+text-shadow:
+0 0 10px #00c8ff,
+0 0 25px #00c8ff,
+0 0 40px #00c8ff;
+}
+
+.subtitle{
+text-align:center;
+color:#d9e4f2;
+margin-top:8px;
+font-size:17px;
+}
+
+.desc{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:max-content;
+margin:15px auto;
+padding:10px 18px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+color:#28d8ff;
+font-weight:700;
+}
+
+.blink{
+width:12px;
+height:12px;
+background:#00ff66;
 border-radius:50%;
-display:block;
-margin:auto;
-border:5px solid #34d8ff;
 box-shadow:
-0 0 20px #34d8ff,
-0 0 60px #34d8ff;
-object-fit:cover;
-}
-
-.title{
-text-align:center;
-margin-top:25px;
-font-size:58px;
-font-weight:800;
-background:linear-gradient(90deg,#34d8ff,#d18cff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.status{
-text-align:center;
-margin-top:15px;
-font-size:22px;
-color:#ddd;
-}
-
-.dot{
-display:inline-block;
-width:15px;
-height:15px;
-border-radius:50%;
-background:#00ff73;
-box-shadow:0 0 15px #00ff73;
+0 0 10px #00ff66,
+0 0 25px #00ff66;
 animation:blink 1s infinite;
 }
 
 @keyframes blink{
-50%{
-opacity:.3;
-}
+50%{opacity:.2;}
 }
 
-.glass{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:28px;
+.darkbtn{
+height:44px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:16px;
+color:white;
+cursor:pointer;
+}
+
+.section{
+margin:18px 0 10px;
+font-size:18px;
+font-weight:800;
+color:#28d8ff;
 }
 
 .repo-box{
-margin-top:30px;
-padding:18px;
 display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
+gap:8px;
+padding:8px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:16px;
 }
 
 .repo-link{
-font-size:22px;
-font-weight:600;
-overflow:hidden;
-}
-
-.copy-btn{
-border:none;
-padding:14px 28px;
-border-radius:16px;
-background:#2b3f8f;
+flex:1;
+display:flex;
+align-items:center;
+padding:0 12px;
 color:white;
-cursor:pointer;
+overflow:hidden;
+word-break:break-all;
+}
+
+.copy,
+.copy-stk{
+height:40px;
+padding:0 16px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.25);
+border-radius:12px;
+color:#28d8ff;
 font-weight:700;
-}.btn{
-margin-top:12px;
-padding:18px;
-text-align:center;
-font-size:22px;
-font-weight:600;
 cursor:pointer;
+box-shadow:
+inset 0 1px 1px rgba(255,255,255,.25),
+0 0 15px rgba(0,200,255,.25);
 transition:.3s;
-border-radius:20px;
 }
 
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px rgba(255,255,255,.15);
+.copy:hover,
+.copy-stk:hover{
+transform:translateY(-2px);
 }
 
-.cydia{
-color:#f3c17a;
-}
-
-.sileo{
-color:#45ff91;
-}
-
-.zebra{
-color:#c58cff;
-}
-
-.saily{
-color:#5ca8ff;
-}
-
-.section-title{
-margin-top:50px;
-font-size:42px;
-font-weight:800;
-}
-
-.card{
+.btn{
+height:46px;
+margin-top:10px;
+padding:0 16px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px;
-margin-top:18px;
-cursor:pointer;
+text-decoration:none;
+color:white;
+font-weight:700;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:16px;
 transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-4px);
+.btn:hover{
+transform:translateY(-2px);
 }
 
-.left{
-display:flex;
-align-items:center;
-gap:18px;
+.sileo{
+background:linear-gradient(
+90deg,
+rgba(0,180,255,.4),
+rgba(103,76,255,.4)
+);
 }
 
-.icon{
-width:65px;
-height:65px;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-}
-
-.green{
-background:#0cb76f;
-}
-
-.pink{
-background:#ff3d96;
-}
-
-.purple{
-background:#8655ff;
-}
-
-.card-title{
-font-size:22px;
-}
-
-.card-sub{
-font-size:15px;
-}
-
-.card-sub{
-opacity:.7;
-margin-top:5px;
-}
-
-.support{
-text-align:center;
-margin-top:40px;
-}
-
-.support-btn{
-border:none;
-padding:12px 28px;
-border-radius:30px;
-font-size:18px;
-font-weight:600;
-background:#ff4fa8;
-color:white;
-cursor:pointer;
-box-shadow:0 0 15px #ff4fa8;
-}
-.about{
-margin-top:50px;
-text-align:center;
-line-height:1.8;
-color:#cfcfcf;
-font-size:20px;
-}
-
-.socials{
-margin-top:35px;
-display:flex;
-justify-content:center;
-gap:30px;
-}
-
-.socials a{
-width:70px;
-height:70px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-color:white;
-text-decoration:none;
+.contact,
+.donate-box{
+margin-top:10px;
+padding:16px;
 background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:16px;
+color:white;
+line-height:1.9;
+}
+
+.donate-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:14px;
+}
+
+.glass-row{
+margin-top:10px;
+padding:14px 16px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:14px;
+color:white;
 }
 
 .footer{
 text-align:center;
-margin:40px 0;
-opacity:.5;
+margin-top:18px;
+color:#d0d9e6;
+line-height:1.8;
 }
 
+/* LIGHT MODE */
+
+body.light .container{
+background:rgba(255,255,255,.95);
+border:2px solid #42cfff;
+}
+
+body.light .logo{
+color:#000;
+}
+
+body.light .subtitle,
+body.light .repo-link,
+body.light .contact,
+body.light .donate-box,
+body.light .glass-row,
+body.light .btn,
+body.light .darkbtn,
+body.light .footer{
+color:#111;
+}
+
+body.light .repo-box,
+body.light .contact,
+body.light .donate-box,
+body.light .glass-row,
+body.light .btn,
+body.light .darkbtn{
+background:rgba(255,255,255,.85);
+}
+
+body.light .section{
+color:#00a8ff;
+}
+
+body.light .desc{
+background:rgba(0,170,255,.08);
+color:#0099ff;
+}
+
+body.light .copy,
+body.light .copy-stk{
+background:linear-gradient(135deg,#3ecfff,#64b5ff);
+color:white;
+}
 </style>
 </head>
+
 <body>
 
 <div class="container">
-<img src="749b755e-c866-4006-8d8b-676c1410b12a.png" class="logo">
-<h1 class="title">JTISVN REPO</h1>
 
-<div class="status">
-<span class="dot"></span>
-&nbsp; Đang hoạt động - Sẵn sàng phục vụ bạn
+<div class="logo-img">
+<img src="logo.png" alt="NVH REPO Logo">
 </div>
 
-<div class="repo-box glass">
-<div class="repo-link" id="repo">
-https://jtisvn.github.io/
+<div class="subtitle">
+Kho tweak Crack – Việt Hoá
 </div>
 
-<button class="copy-btn" onclick="copyRepo()">
-SAO CHÉP
+<div class="desc">
+<div class="blink"></div>
+JAILBREAK • CÔNG NGHỆ
+</div>
+
+<div class="darkbtn" onclick="toggleMode()" id="mode">
+🌙 Đang dùng Dark Mode
+</div>
+
+<div class="section">
+ĐƯỜNG DẪN REPO
+</div>
+
+<div class="repo-box">
+<div class="repo-link">
+https://bvnrepo.xyz
+</div>
+
+<button class="copy" onclick="copyRepo(this)">
+📋 Sao chép
 </button>
 </div>
 
-<div class="btn glass cydia"
-onclick="window.location='cydia://url/https://cydia.saurik.com/api/share#?source=https://jtisvn.github.io/'">
-➕ Thêm vào Cydia
+<a href="#" class="btn">
+🗂️ Thêm vào Cydia
+<span>❯</span>
+</a>
+
+<a href="#" class="btn sileo">
+🌀 Thêm vào Sileo
+<span>❯</span>
+</a>
+
+<a href="#" class="btn">
+🦓 Thêm vào Zebra
+<span>❯</span>
+</a>
+
+<a href="#" class="btn">
+📦 Repo Roothide
+<span>❯</span>
+</a>
+
+<a href="#" class="btn">
+📲 Kho IPA
+<span>❯</span>
+</a>
+
+<a href="#" class="btn">
+🧪 File Tiêm – TrollFools
+<span>❯</span>
+</a>
+
+<div class="section">
+THÔNG TIN LIÊN HỆ
 </div>
 
-<div class="btn glass sileo"
-onclick="window.location='sileo://source/https://jtisvn.github.io/'">
-⚡ Thêm vào Sileo
+<div class="contact">
+Repo được phát triển bởi: NVH 🇻🇳<br>
+Kho lưu trữ các Tweak Việt hoá cho cộng đồng Jailbreak.<br>
+Hỗ trợ: Bug, góp ý, yêu cầu tính năng mới.<br>
+Email: huanketamin2@gmail.com<br>
+Telegram: xyz
 </div>
 
-<div class="card glass"
-onclick="window.open('https://little3306.github.io/nvhrepo.github.io/')">
-    ☰ Thêm vào Zebra
+<div class="section">
+ỦNG HỘ (DONATE)
 </div>
 
-<div class="btn glass saily">
-📦 Thêm vào Saily
-</div>
+<div class="donate-box">
 
-<h2 class="section-title">Khác</h2>
-
-<div class="card glass">
-<div class="left">
-<div class="icon green">
-<i class="fas fa-shield-alt"></i>
-</div>
+<div class="donate-row">
 <div>
-<div class="card-title">DNS Chặn Quảng Cáo</div>
-<div class="card-sub">Cài đặt cấu hình DNS</div>
-</div>
-</div>
-<i class="fas fa-chevron-right"></i>
+STK: <b>034308161144</b>
 </div>
 
-<div class="card glass">
-<div class="left">
-<div class="icon pink">
-<i class="fab fa-apple"></i>
-</div>
-<div>
-<div class="card-title">Kho IPA</div>
-<div class="card-sub">Thư viện ứng dụng IPA Mod</div>
-</div>
-</div>
-<i class="fas fa-chevron-right"></i>
-</div>
-
-<div class="card glass">
-<div class="left">
-<div class="icon purple">
-<i class="fas fa-microchip"></i>
-</div>
-<div>
-<div class="card-title">Kho Dylib</div>
-<div class="card-sub">Dylib Mod Apps & Việt hóa</div>
-</div>
-</div>
-<i class="fas fa-chevron-right"></i>
-</div>
-
-<div class="support">
-<button class="support-btn">
-❤️ Ủng hộ tôi
+<button class="copy-stk" onclick="copySTK(this)">
+📋 Sao chép
 </button>
 </div>
 
-<div class="about">
-<h2>Giới Thiệu Về JTISVN Repo</h2>
-<br>
-JTISVN là kho lưu trữ chuyên cung cấp các Tweak iOS Việt hóa,
-IPA Mod và thư viện Dylib dành cho cộng đồng Jailbreak.
+<div class="glass-row">
+🏦 Ngân hàng: <b>MBBank</b>
 </div>
 
-<div class="socials">
-<a href="#"><i class="fab fa-telegram"></i></a>
-<a href="#"><i class="fab fa-x-twitter"></i></a>
-<a href="#"><i class="fab fa-github"></i></a>
+<div class="glass-row">
+👤 Chủ TK: <b>NUNG VAN HUAN</b>
+</div>
+
 </div>
 
 <div class="footer">
-© 2026NungVanHuan Repository
+❤️ Ủng hộ giúp Repo phát triển ❤️
+<br><br>
+© 2026 NVH REPO
 </div>
 
 </div>
 
 <script>
-function copyRepo(){
-navigator.clipboard.writeText(
-"https://jtisvn.github.io/"
-);
-alert("Đã sao chép Repo");
+function copyRepo(btn){
+navigator.clipboard.writeText("https://bvnrepo.xyz");
+btn.innerHTML="✅ Đã sao chép";
+setTimeout(()=>{
+btn.innerHTML="📋 Sao chép";
+},2000);
+}
+
+function copySTK(btn){
+navigator.clipboard.writeText("034308161144");
+btn.innerHTML="✅ Đã sao chép";
+setTimeout(()=>{
+btn.innerHTML="📋 Sao chép";
+},2000);
+}
+
+function toggleMode(){
+document.body.classList.toggle("light");
+
+document.getElementById("mode").innerHTML=
+document.body.classList.contains("light")
+? "☀️ Đang dùng Light Mode"
+: "🌙 Đang dùng Dark Mode";
 }
 </script>
 
 </body>
 </html>
-<style>
-
-/* CSS của bạn ở trên */
-
-.footer{
-text-align:center;
-margin:40px 0;
-opacity:.5;
-}
-
-/* DÁN VÀO ĐÂY */
-
-.btn,
-.card,
-.support-btn{
-    transition: all .2s ease;
-}
-
-.btn:active,
-.card:active,
-.support-btn:active{
-    transform: scale(0.96);
-    opacity: .85;
-}
-
-</style>
